@@ -1,29 +1,19 @@
 ﻿namespace DtaGenerator
 {
-    public class MSPeak
+    public struct MSPeak
     {
-        protected double mz;
-
-        public double MZ
-        {
-            get { return mz; }
-            set { mz = value; }
-        }
-
-        protected double intensity;
-
-        public double Intensity
-        {
-            get { return intensity; }
-            set { intensity = value; }
-        }
-
-        public MSPeak() { }
-
+        public double MZ;
+        public double Intensity;
+       
         public MSPeak(double mz, double intensity)
         {
-            this.mz = mz;
-            this.intensity = intensity;
+            MZ = mz;
+            Intensity = intensity;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[{0:0.000}, {1:0.00}]", MZ, Intensity);
         }
     }
 }
